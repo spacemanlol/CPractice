@@ -1,6 +1,41 @@
 #include <iostream>
 using namespace std;
 
+struct A{
+	char a;
+	char b;
+//	char c;
+	short d;
+	int e;
+	long l;
+	double k;	
+
+};
+
+
+struct B{
+	long l;
+	double k;
+	int e;
+	short d;
+	char a;
+	char b;
+//	char c;
+
+};
+// LESSON: this struct req 20 bytes, but struct size is 24 because struct needs to be memory aligned with the highest data member size
+struct C { 
+	char c;
+	double d;
+	int i;
+};
+
+// LESSON: this struct req 13 bytes, but struct size is 16 because struct needs to be memory aligned with the highest data member size
+struct D {
+	double d;
+	int s;
+	char c;
+};
 
 int main(){
 	//LESSON 1: hello is a constant string literal it is not allowed to be assigned to non constant character-to-pointer (compilation error)
@@ -47,5 +82,26 @@ int main(){
 	int& y3 = x1;
 	y2 =  &y;
         //y3 = &y;
+	char a;
+	char b;
+	char c1;
+	short d;
+	int e;
+	long l;
+	double k;	
+	A a1;
+	B r;
+	C c2;
+	D d2;
+
+	cout << "a = " << sizeof(a) << endl;
+	cout << "d = " << sizeof(d) << endl;
+	cout << "e = " << sizeof(e) << endl;
+	cout << "l = " << sizeof(l) << endl;
+	cout << "k = " << sizeof(k) << endl;
+	cout << "b = " << sizeof(r) << endl;
+	cout << "A = " << sizeof(a1) << endl;
+	cout << "C = " << sizeof(c2) << endl;
+	cout << "D = " << sizeof(d2) << endl;
 	return 0;
 }
